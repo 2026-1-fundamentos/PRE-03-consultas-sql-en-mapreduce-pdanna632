@@ -4,7 +4,8 @@
 # pylint: disable=import-error
 
 import os
-
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from homework.queries import run
 
 
@@ -29,3 +30,7 @@ def test_01():
 
             if not os.path.exists(filename):
                 raise Exception(f"The file {filename} does not exist")
+
+
+if __name__ == "__main__":
+    test_01()
